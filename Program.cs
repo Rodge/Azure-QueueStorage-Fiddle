@@ -19,7 +19,7 @@ public class Program
         
         ctx.SendMessage();
         ctx.PeekMessage();
-        ctx.ChangeContentsOfMessageInQueue();
+        ctx.ChangeContentsOfMessageInQueue(); // Waiting 60 sec in this one!
         ctx.DequeueNextMessage();
         ctx.GetQueueLength();
         ctx.DeleteTheQueue();
@@ -66,6 +66,13 @@ public class Program
             "Updated contents",
             TimeSpan.FromSeconds(60.0) // Make it invisible for another 60 seconds
         );
+        
+        var now = DateTime.Now;
+        while (DateTime.Now.Subtract(now).Minutes < 1)
+        {
+            // wait for 60 seconds
+        }
+        // 60 seconds passed, continue
     }
 
     private void DequeueNextMessage()
