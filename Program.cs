@@ -31,7 +31,7 @@ public class Program
             // Instantiate a QueueClient which will be used to create and manipulate the queue
             _queueClient = new QueueClient(connectionString, queueName);
 
-            // Create the queue
+            // Create the queue (if it doesn't exist)
             _queueClient.CreateIfNotExists();
 
             Console.WriteLine(_queueClient.Exists()
