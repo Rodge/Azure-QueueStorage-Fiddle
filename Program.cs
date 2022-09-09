@@ -35,7 +35,7 @@ public class Program
             _queueClient.CreateIfNotExists();
 
             Console.WriteLine(_queueClient.Exists()
-                ? $"Queue created: '{_queueClient.Name}'"
+                ? $"Queue created or exists: '{_queueClient.Name}'"
                 : $"Make sure the Azurite storage emulator running and try again.");
         }
         catch (Exception ex)
