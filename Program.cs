@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Threading.Tasks;
+using Azure.Storage.Queues;
+using Microsoft.Extensions.Configuration;
